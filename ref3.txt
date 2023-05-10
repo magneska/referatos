@@ -1,0 +1,15 @@
+IIR (infinite impulse response)
+Digitální filtr je výsledkem numerických operací prováděných procesorem. 
+Tyto filtry zpracovávají vzorkované signály. 
+Spojitý čas je nahrazen posloupností stejně dlouhých časových okamžiků, během kterých jsou odebírány jednotlivé vzorky.
+
+Výhody digitálních filtrů: 
+1. Je programovatelný, lze snadno měnit jeho funkci a parametry 
+2. Lze jednodušeji navrhnout a zkoušet 
+3. Parametry filtru nejsou závislé na čase ani na teplotě (není tvořen ze součástek, které by tyto veličiny ovlivňovaly)
+
+Pro získání koeficientů A a B, využiji MATLABovský skript Yulewalk(N,f,m)
+f…vektor normovaných frekvencí (začíná 0 a končí 1 – Nyquistův kmitočet) 
+m…vektor amplitud (1 – filtr propouští, 0 – filtr nepropouští => pro low pass filter = 1,1,0,0)
+vyhoda analog – funguje v realnem case -> zobrazeni na OSC rovnou
+Z=(Xc*R2)/(Xc+R2)=(1/jwc*R2)/(1/jwc+R2)=R2/(1+jwCR2)=>Uvýst=-Uvst*R2/(1+jwCR2)	 Au=20*log Uvyst/Uvstup
